@@ -1,0 +1,40 @@
+{
+  "name": "Full-Stack CRUD Application",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/node:latest": {
+      "version": "latest"
+    }
+  },
+  "forwardPorts": [8080, 3000],
+  "portsAttributes": {
+    "8080": {
+      "label": "Backend API",
+      "onAutoForward": "notify"
+    },
+    "3000": {
+      "label": "Frontend React",
+      "onAutoForward": "notify"
+    }
+  },
+  "postCreateCommand": "echo '✓ Dev container created. Run: npm install && npm start in frontend, mvn spring-boot:run in backend'",
+  "remoteUser": "root",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-maven",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "ms-vscode.extension-pack-for-java"
+      ],
+      "settings": {
+        "java.server.launchMode": "Standard",
+        "[javascript]": {
+          "editor.defaultFormatter": "esbenp.prettier-vscode",
+          "editor.formatOnSave": true
+        }
+      }
+    }
+  }
+}
